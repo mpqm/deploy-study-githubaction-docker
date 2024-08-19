@@ -34,12 +34,12 @@ def platform = project.hasProperty('platform') ? project.property('platform') : 
 
 docker {
 	if (platform == "frontend") {
-		name "okqkrwhdtjd/frontend:"+version
+		name "okqkrwhdtjd1234/frontend:"+version
 		files "../frontend/dist"
 		buildArgs(['DIST_DIR': "../"])
 		dockerfile file("../devops/Dockerfile_frontend")
 	} else {
-		name "okqkrwhdtjd/backend:"+version
+		name "okqkrwhdtjd1234/backend:"+version
 		files tasks.bootJar.outputs.files
 		buildArgs(['JAR_FILE':tasks.bootJar.outputs.files.singleFile.name])
 		dockerfile file("../devops/Dockerfile_backend")
