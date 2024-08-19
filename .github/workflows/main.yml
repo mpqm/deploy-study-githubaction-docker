@@ -55,7 +55,7 @@ jobs:
                 spec:
                   containers:
                     - name: backend
-                      image: ddarahakit2024/backend:1.5
+                      image: okqkrwhdtjd1234/backend:0.0.1-SNAPSHOT
                 EOF
 
 #              kubectl apply -f <<EOF
