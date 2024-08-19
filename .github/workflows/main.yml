@@ -31,8 +31,8 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
-          username: okqkrwhdtjd@naver.com
-          password: Okqkrwhdtjd1234
+          username: okqkrwhdtjd1234
+          password: Okqkrwhdtjd12345
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
