@@ -42,19 +42,20 @@ jobs:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.3
         with:
+          key: ${{ secrets.KEY }}
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-              kubectl apply -f <<EOF
-              apiVersion: v1
-              kind: Pod
-              metadata:
-                name: backend
-              spec:
-                containers:
-                - name: backend
-                  image: okqkrwhdtjd1234/backend:0.0.1-SNAPSHOT
-              EOF
+            whoami
+#              kubectl apply -f <<EOF
+#              apiVersion: v1
+#              kind: Pod
+#              metadata:
+#                name: backend
+#              spec:
+#                containers:
+#                - name: backend
+#                  image: okqkrwhdtjd1234/backend:0.0.1-SNAPSHOT
+#              EOF
 #####
