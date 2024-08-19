@@ -43,11 +43,21 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         with:
           key: ${{ secrets.KEY }}
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
+          host: 175.197.41.193
+          username: root
+          port: 8118
           script: |
             whoami
+#            118
+#            192.168.0.102면
+#            외부 8002 내부 80
+#            외부 8102 내부 443
+#            외부 8202 내부 8080
+
+#            + 16
+#            8018 내부 80
+#            8118 내부 443
+#            8218 내부 8080
 #              kubectl apply -f <<EOF
 #              apiVersion: v1
 #              kind: Pod
