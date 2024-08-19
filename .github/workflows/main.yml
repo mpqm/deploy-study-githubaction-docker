@@ -2,8 +2,8 @@ name: devops test
 
 on:
   push:
-    branches: [ master ]
-
+#    branches: [ master ]
+    branches:
 jobs:
   deploy:
     name: Deploy to k8s
@@ -58,4 +58,4 @@ jobs:
                 - name: backend
                   image: okqkrwhdtjd1234/backend:0.0.1-SNAPSHOT
               EOF
-#
+##
