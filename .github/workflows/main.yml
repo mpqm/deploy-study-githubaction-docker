@@ -47,7 +47,14 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script:
-            whoami
-            ls -al
-            sudo su
+          script: |
+              kubectl apply -f <<EOF
+              apiVersion: v1
+              kind: Pod
+              metadata:
+                name: backend
+              spec:
+                containers:
+                - name: backend
+                  image: okqkrwhdtjd1234/backend:0.0.1-SNAPSHOT
+              EOF
