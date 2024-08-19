@@ -21,11 +21,10 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
-      - name: Navigate to backend directory
-        run: cd ./backend
 
       - name: Build with Gradle
         run: |
+          cd ./backend
           chmod +x ./gradlew
           ./gradlew docker -Pplatform=backend
 
