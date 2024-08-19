@@ -3,7 +3,7 @@ name: devops test
 on:
   push:
     branches: [ master ]
-    
+
 jobs:
   deploy:
     name: Deploy to k8s
@@ -39,3 +39,14 @@ jobs:
           file: ./devops/Dockerfile_backend
           push: true
           tags: okqkrwhdtjd1234/backend:0.0.1-SNAPSHOT
+
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script:
+            whoami
+            ls -al
