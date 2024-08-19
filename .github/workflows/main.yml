@@ -24,7 +24,7 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          chmod +x ./backend/gradlew
+          chmod +x backend/gradlew
           ./gradlew docker -Pplatform=backend
 
       - name: Login to DockerHub
