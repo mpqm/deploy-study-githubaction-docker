@@ -2,8 +2,7 @@ name: devops test
 
 on:
   push:
-#    branches: [ master ]
-    branches:
+    branches: [ master ]
 jobs:
   deploy:
     name: Deploy to k8s
