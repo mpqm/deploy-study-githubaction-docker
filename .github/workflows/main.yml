@@ -45,7 +45,7 @@ jobs:
           host: 175.197.41.193
           username: root
           key: ${{ secrets.SSH_KEY }}
-          port: 8218
+          port: 8118
           script: |
             kubectl apply -f - <<EOF
             apiVersion: v1
