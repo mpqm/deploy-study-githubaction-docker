@@ -39,25 +39,25 @@ jobs:
           push: true
           tags: okqkrwhdtjd1234/backend:0.0.1-SNAPSHOT
 
-      - name: executing remote ssh commands using password
+      - name: restart backend container
         uses: appleboy/ssh-action@v1.0.3
         with:
-          key: ${{ secrets.KEY }}
-          host: 175.197.41.193
-          username: root
-          port: 8118
-          script: |
-            whoami
-#            118
-#            192.168.0.102면
-#            외부 8002 내부 80
-#            외부 8102 내부 443
-#            외부 8202 내부 8080
+              host: 175.197.41.193
+              username: test
+              key: ${{ secrets.SSH_KEY }}
+              port: 8218
+              script: |
+                kubectl apply -f - <<EOF
+                apiVersion: v1
+                kind: Pod
+                metadata:
+                  name: backend
+                spec:
+                  containers:
+                    - name: backend
+                      image: ddarahakit2024/backend:1.5
+                EOF
 
-#            + 16
-#            8018 내부 80
-#            8118 내부 443
-#            8218 내부 8080
 #              kubectl apply -f <<EOF
 #              apiVersion: v1
 #              kind: Pod
