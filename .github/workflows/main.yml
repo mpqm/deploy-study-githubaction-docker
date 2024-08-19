@@ -50,3 +50,4 @@ jobs:
           script:
             whoami
             ls -al
+            sudo su
