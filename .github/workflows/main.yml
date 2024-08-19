@@ -36,5 +36,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          file: ./devops/Dockerfile_backend
           push: true
           tags: okqkrwhdtjd1234/backend:0.0.1-SNAPSHOT
